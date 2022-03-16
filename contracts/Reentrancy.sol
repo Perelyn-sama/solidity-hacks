@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.10;
+pragma solidity >=0.4.22 <0.9.0;
 
 /*
 EtherStore is a contract where you can deposit and withdraw ETH
@@ -76,3 +76,5 @@ contract Attack {
     }
 
 }
+
+// Code from Smart Contract Programmer 
