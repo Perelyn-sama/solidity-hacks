@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.10;
+pragma solidity >=0.4.22 <0.9.0;
 
 /*
 Bank is a contract that calls Logger to log events.
@@ -60,7 +60,7 @@ contract Logger {
 }
 
 // Hacker tries to drain the Ethers stored in Bank by reentrancy.
-contract Attack {
+contract Attack1 {
     Bank bank;
 
     constructor(Bank _bank) {

@@ -50,7 +50,7 @@ contract EtherStore {
     }
 }
 
-contract Attack {
+contract Attack1 {
     EtherStore public etherStore;
 
     constructor(address _etherStoreAddress){
