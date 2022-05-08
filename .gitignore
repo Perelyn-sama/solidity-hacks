@@ -1,3 +1,2 @@
-.idea
-.vscode 
-build
+cache/
+out/
