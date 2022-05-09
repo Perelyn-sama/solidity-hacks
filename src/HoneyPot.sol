@@ -23,19 +23,34 @@ Logger.log() calls HoneyPot.log() and reverts. Transaction fails.
 */
 
 contract Bank {
-    mapping(address => uint) public balances;
-    Logger logger;
+    mapping(address => uint256) public balances;
+    // Should be
+    // Logger logger;
 
-    constructor(Logger _logger) {
-        logger = Logger(_logger);
+    // for the test to work
+    HoneyPot honeyPot;
+
+    // should be
+    // constructor(Logger _logger) {
+    //     logger = Logger(_logger);
+    // }
+
+    // for the test to work
+    constructor(HoneyPot _honeyPot) {
+        honeyPot = HoneyPot(_honeyPot);
     }
 
     function deposit() public payable {
         balances[msg.sender] += msg.value;
-        logger.log(msg.sender, msg.value, "Deposit");
+
+        // should be
+        // logger.log(msg.sender, msg.value, "Deposit");
+
+        // for test to work
+        honeyPot.log(msg.sender, msg.value, "Deposit");
     }
 
-    function withdraw(uint _amount) public {
+    function withdraw(uint256 _amount) public {
         require(_amount <= balances[msg.sender], "Insufficient funds");
 
         (bool sent, ) = msg.sender.call{value: _amount}("");
@@ -43,16 +58,20 @@ contract Bank {
 
         balances[msg.sender] -= _amount;
 
-        logger.log(msg.sender, _amount, "Withdraw");
+        // Should be
+        // logger.log(msg.sender, _amount, "Withdraw");
+
+        // for test to work
+        honeyPot.log(msg.sender, _amount, "Withdraw");
     }
 }
 
 contract Logger {
-    event Log(address caller, uint amount, string action);
+    event Log(address caller, uint256 amount, string action);
 
     function log(
         address _caller,
-        uint _amount,
+        uint256 _amount,
         string memory _action
     ) public {
         emit Log(_caller, _amount, _action);
@@ -60,7 +79,7 @@ contract Logger {
 }
 
 // Hacker tries to drain the Ethers stored in Bank by reentrancy.
-contract Attack1 {
+contract Attack {
     Bank bank;
 
     constructor(Bank _bank) {
@@ -78,7 +97,7 @@ contract Attack1 {
         bank.withdraw(1 ether);
     }
 
-    function getBalance() public view returns (uint) {
+    function getBalance() public view returns (uint256) {
         return address(this).balance;
     }
 }
@@ -87,7 +106,7 @@ contract Attack1 {
 contract HoneyPot {
     function log(
         address _caller,
-        uint _amount,
+        uint256 _amount,
         string memory _action
     ) public {
         if (equal(_action, "Withdraw")) {
@@ -96,7 +115,11 @@ contract HoneyPot {
     }
 
     // Function to compare strings using keccak256
-    function equal(string memory _a, string memory _b) public pure returns (bool) {
+    function equal(string memory _a, string memory _b)
+        public
+        pure
+        returns (bool)
+    {
         return keccak256(abi.encode(_a)) == keccak256(abi.encode(_b));
     }
 }
