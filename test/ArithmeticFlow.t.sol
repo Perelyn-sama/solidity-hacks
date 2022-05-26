@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: UNLICENSED
-pragma solidity 0.8.9;
+pragma solidity >=0.4.22 <0.9.0;
 
 import "ds-test/test.sol";
-import "../Reentrancy.sol";
-import "../ArithmeticFlow.sol";
+import ".././src/Reentrancy.sol";
+import ".././src/ArithmeticFlow.sol";
 import "forge-std/Test.sol";
 
 contract ArithmeticFlowTest is DSTest {

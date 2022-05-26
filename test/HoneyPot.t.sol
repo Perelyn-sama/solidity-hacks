@@ -3,7 +3,7 @@ pragma solidity 0.8.9;
 
 import "ds-test/test.sol";
 import "forge-std/Test.sol";
-import "../HoneyPot.sol";
+import ".././src/HoneyPot.sol";
 
 contract HoneyPotTest is DSTest {
     HoneyPot honeyPot;

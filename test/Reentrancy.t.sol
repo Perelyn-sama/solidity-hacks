@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: UNLICENSED
-pragma solidity 0.8.9;
+pragma solidity >=0.4.22 <0.9.0;
 
 import "ds-test/test.sol";
-import "../Reentrancy.sol";
+import ".././src/Reentrancy.sol";
 import "forge-std/Test.sol";
 
 contract ReentrancyTest is DSTest {
@@ -28,6 +28,7 @@ contract ReentrancyTest is DSTest {
             "Ether in Store contract after deposit",
             etherStore.getBalance()
         );
+        emit log_named_uint("important", etherStore.balances(msg.sender));
 
         emit log_named_uint(
             "Ether in Attack contract after before attack",

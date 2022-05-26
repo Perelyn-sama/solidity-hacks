@@ -3,7 +3,7 @@ pragma solidity 0.8.9;
 
 import "ds-test/test.sol";
 import "forge-std/Test.sol";
-import "../ForceEther.sol";
+import ".././src/ForceEther.sol";
 
 contract ForceEtherTest is DSTest {
     EtherGame etherGame;

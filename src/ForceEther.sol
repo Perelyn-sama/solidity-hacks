@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: UNLICENSED
 pragma solidity >=0.4.22 <0.9.0;
 
 // The goal of this game is to be the 7th player to deposit 1 Ether.

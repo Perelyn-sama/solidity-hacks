@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: UNLICENSED
 pragma solidity >=0.4.22 <0.9.0;
 
 /**
@@ -8,7 +8,7 @@ However Eve deploys Foo with the address of Mal, so that calling Foo.callBar()
 will actually execute the code at Mal 
  */
 
- /**
+/**
  1. Eve deploys Mal
  2 Eve deploys Foo with the address of Mal
  3. Alice calls Foo.callBar() after reading the code and judging that it is safe to call
@@ -35,7 +35,7 @@ contract Bar {
     }
 }
 
-// This code is hidden in a seperate file 
+// This code is hidden in a seperate file
 contract Mal {
     event Log(string message);
 
@@ -43,13 +43,13 @@ contract Mal {
     //     emit Log("Mal was called");
     // }
 
-    // Although we can execute the same exploit even if this function does 
+    // Although we can execute the same exploit even if this function does
     // not exist by using the fallback
     function log() public {
         emit Log("Mal was called");
     }
 }
 
-// Preventive Techniques 
-// Make address of called contract know 
-// Code from Smart Contract Programmer 
+// Preventive Techniques
+// Make address of called contract know
+// Code from Smart Contract Programmer

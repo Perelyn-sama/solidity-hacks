@@ -1,5 +1,5 @@
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.8.13;
+// SPDX-License-Identifier: UNLICENSED
+pragma solidity >=0.4.22 <0.9.0;
 
 /*
 Alice creates a guessing game.
@@ -33,7 +33,10 @@ contract FindThisHash {
     constructor() payable {}
 
     function solve(string memory solution) public {
-        require(hash == keccak256(abi.encodePacked(solution)), "Incorrect answer");
+        require(
+            hash == keccak256(abi.encodePacked(solution)),
+            "Incorrect answer"
+        );
 
         (bool sent, ) = msg.sender.call{value: 10 ether}("");
         require(sent, "Failed to send Ether");

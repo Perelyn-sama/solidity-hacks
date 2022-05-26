@@ -2,8 +2,7 @@
 pragma solidity 0.8.9;
 
 import "ds-test/test.sol";
-import "../Reentrancy.sol";
-import "../ExternalContract.sol";
+import ".././src/ExternalContract.sol";
 import "forge-std/Test.sol";
 
 contract ExternalContractTest is DSTest {
