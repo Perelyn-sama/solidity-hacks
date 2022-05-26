@@ -1,11 +1,5 @@
-make --dry-run --always-make --keep-going --print-directory
+make remove --dry-run --keep-going --print-directory
 make: Entering directory '/root/projects/solidity-hacks'
-forge clean
 rm -rf .gitmodules && rm -rf .git/modules/* && rm -rf lib && touch .gitmodules && git add . && git commit -m "modules"
-forge install dapphub/ds-test 
-forge install OpenZeppelin/openzeppelin-contracts
-forge update
-nix-env -f https://github.com/dapphub/dapptools/archive/master.tar.gz -iA solc-static-versions.solc_0_8_10
-forge clean && forge build --optimize --optimize-runs 1000000
 make: Leaving directory '/root/projects/solidity-hacks'
  

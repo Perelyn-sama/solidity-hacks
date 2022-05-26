@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu May 26 13:17:49 2022
+# Make data base, printed on Thu May 26 15:28:33 2022
 
 # Variables
 
@@ -31,6 +31,7 @@ CURDIR := /root/projects/solidity-hacks
 # makefile
 SHELL = /bin/sh
 # environment
+ 
 VSCODE_NLS_CONFIG = {"locale":"en","availableLanguages":{}}
 # environment
 _ = /mnt/c/Users/HP PAVILION GAMING/AppData/Local/Programs/Microsoft VS Code/bin/code
@@ -61,7 +62,6 @@ LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
- 
 PWD = /root/projects/solidity-hacks
 # default
 .LOADED := 
@@ -87,6 +87,7 @@ VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 MAKELEVEL := 0
 # default
 MAKE = $(MAKE_COMMAND)
+ 
 # default
 MAKECMDGOALS := all
 # environment
@@ -151,6 +152,7 @@ LANG = C
 TERM = xterm-256color
 # environment
 VSCODE_EXTHOST_WILL_SEND_SOCKET = true
+ 
 # environment
 WSL_DISTRO_NAME = Ubuntu-20.04
 # variable set hash-table stats:
@@ -162,9 +164,9 @@ WSL_DISTRO_NAME = Ubuntu-20.04
 
 # Directories
 
-# . (device 2064, inode 519476): 14 files, no impossibilities.
+# . (device 2064, inode 519476): 12 files, no impossibilities.
 
-# 14 files, no impossibilities in 1 directories.
+# 12 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -200,6 +202,7 @@ setup-yarn:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+ 
 
 remove:
 #  Implicit rule search has not been done.
@@ -233,6 +236,7 @@ build:
 .env:
 #  Implicit rule search has been done.
 #  File does not exist.
+ 
 #  File has been updated.
 #  Failed to be updated.
 
@@ -301,12 +305,12 @@ install:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 29 / storage = 234 B / avg = 8 B
-# current buf: size = 8162 B / used = 234 B / count = 29 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 27 / storage = 225 B / avg = 8 B
+# current buf: size = 8162 B / used = 225 B / count = 27 / avg = 8 B
 
-# strcache performance: lookups = 53 / hit rate = 45%
+# strcache performance: lookups = 51 / hit rate = 47%
 # hash-table stats:
-# Load=29/8192=0%, Rehash=0, Collisions=1/53=2%
-# Finished Make data base on Thu May 26 13:17:49 2022
+# Load=27/8192=0%, Rehash=0, Collisions=1/51=2%
+# Finished Make data base on Thu May 26 15:28:33 2022
 
  
