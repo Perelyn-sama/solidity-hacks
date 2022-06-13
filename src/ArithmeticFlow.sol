@@ -1,5 +1,4 @@
 // SPDX-License-Identifier: UNLICENSED
-// pragma solidity ^0.7.6;
 pragma solidity >=0.4.22 <0.9.0;
 
 // This contract is designed to act as a time vault.
