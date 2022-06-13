@@ -1,4 +1,6 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+makefile:19: *** missing separator.  Stop.
+
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -6,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu May 26 15:28:33 2022
+# Make data base, printed on Fri May 27 14:02:36 2022
 
 # Variables
 
@@ -31,13 +33,12 @@ CURDIR := /root/projects/solidity-hacks
 # makefile
 SHELL = /bin/sh
 # environment
- 
 VSCODE_NLS_CONFIG = {"locale":"en","availableLanguages":{}}
 # environment
 _ = /mnt/c/Users/HP PAVILION GAMING/AppData/Local/Programs/Microsoft VS Code/bin/code
 # makefile (from 'makefile', line 1)
 MAKEFILE_LIST :=  makefile
-# 'override' directive
+# environment
 GNUMAKEFLAGS := 
 # environment
 VSCODE_VERBOSE_LOGGING = true
@@ -52,7 +53,7 @@ LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
 VSCODE_LOG_STACK = false
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-aca12508-6e78-406b-9c1d-f04db2aa2868.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-d993241e-a4a2-4683-8833-211dcedfae0a.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -68,7 +69,7 @@ PWD = /root/projects/solidity-hacks
 # environment
 WSL_INTEROP = /run/WSL/8_interop
 # environment
-WT_SESSION = d0eb6d1f-7070-4345-8f3c-dfc555cb70e4
+WT_SESSION = 9779d9c6-3d94-4b27-8620-5a5f7191b041
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
@@ -87,7 +88,6 @@ VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 MAKELEVEL := 0
 # default
 MAKE = $(MAKE_COMMAND)
- 
 # default
 MAKECMDGOALS := all
 # environment
@@ -152,11 +152,10 @@ LANG = C
 TERM = xterm-256color
 # environment
 VSCODE_EXTHOST_WILL_SEND_SOCKET = true
- 
 # environment
 WSL_DISTRO_NAME = Ubuntu-20.04
 # variable set hash-table stats:
-# Load=71/1024=7%, Rehash=0, Collisions=4/99=4%
+# Load=71/1024=7%, Rehash=0, Collisions=4/85=5%
 
 # Pattern-specific Variable Values
 
@@ -164,9 +163,9 @@ WSL_DISTRO_NAME = Ubuntu-20.04
 
 # Directories
 
-# . (device 2064, inode 519476): 12 files, no impossibilities.
+# . (device 2064, inode 519476): 16 files, no impossibilities.
 
-# 12 files, no impossibilities in 1 directories.
+# 16 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -174,35 +173,11 @@ WSL_DISTRO_NAME = Ubuntu-20.04
 
 # Files
 
-local-node: setup-yarn
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'makefile', line 31):
-	yarn hardhat node 
-
 all: clean remove install update solc build
 #  Command line target.
-#  Implicit rule search has been done.
-#  File does not exist.
-#  File has been updated.
-#  Needs to be updated (-q is set).
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/3=0%
-
-setup-yarn:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'makefile', line 28):
-	yarn 
-
-# Not a target:
-.SUFFIXES:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
- 
 
 remove:
 #  Implicit rule search has not been done.
@@ -211,34 +186,29 @@ remove:
 #  recipe to execute (from 'makefile', line 14):
 	 rm -rf .gitmodules && rm -rf .git/modules/* && rm -rf lib && touch .gitmodules && git add . && git commit -m "modules"
 
+# Not a target:
 update:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'makefile', line 22):
-	 forge update
 
 # Not a target:
 makefile:
-#  Implicit rule search has been done.
-#  Last modified 2022-05-08 20:02:02.5613119
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
+# Not a target:
 build:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'makefile', line 25):
-	 forge clean && forge build --optimize --optimize-runs 1000000
 
 # Not a target:
 .env:
-#  Implicit rule search has been done.
-#  File does not exist.
- 
-#  File has been updated.
-#  Failed to be updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 .DEFAULT:
@@ -248,38 +218,10 @@ build:
 
 clean:
 #  Implicit rule search has not been done.
-#  Implicit/static pattern stem: ''
-#  File does not exist.
-#  File has been updated.
-#  Needs to be updated (-q is set).
-# automatic
-# @ := clean
-# automatic
-# % := 
-# automatic
-# * := 
-# automatic
-# + := 
-# automatic
-# | := 
-# automatic
-# < := 
-# automatic
-# ^ := 
-# automatic
-# ? := 
-# variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from 'makefile', line 11):
-	 forge clean
-
-deploy:
-#  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'makefile', line 34):
-	forge create StakeContract --private-key ${PRIVATE_KEY} # --rpc-url 
-	
+#  recipe to execute (from 'makefile', line 11):
+	 forge clean
 
 solc:
 #  Implicit rule search has not been done.
@@ -294,23 +236,22 @@ install:
 #  File has not been updated.
 #  recipe to execute (from 'makefile', line 17):
 	 
-	forge install dapphub/ds-test 
-	forge install OpenZeppelin/openzeppelin-contracts
+		forge install OpenZeppelin/openzeppelin-contracts
 
 # files hash-table stats:
-# Load=14/1024=1%, Rehash=0, Collisions=0/40=0%
+# Load=11/1024=1%, Rehash=0, Collisions=0/24=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 27 / storage = 225 B / avg = 8 B
-# current buf: size = 8162 B / used = 225 B / count = 27 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 28 / storage = 218 B / avg = 7 B
+# current buf: size = 8162 B / used = 218 B / count = 28 / avg = 7 B
 
-# strcache performance: lookups = 51 / hit rate = 47%
+# strcache performance: lookups = 43 / hit rate = 34%
 # hash-table stats:
-# Load=27/8192=0%, Rehash=0, Collisions=1/51=2%
-# Finished Make data base on Thu May 26 15:28:33 2022
+# Load=28/8192=0%, Rehash=0, Collisions=1/43=2%
+# Finished Make data base on Fri May 27 14:02:36 2022
 
  

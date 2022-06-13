@@ -1,1 +1,1 @@
-{"buildTargets":["all","build","clean","deploy","install","local-node","remove","setup-yarn","solc","update"],"launchTargets":[],"customConfigurationProvider":{"workspaceBrowse":{"browsePath":[],"compilerArgs":[]},"fileIndex":[]}}
+{"buildTargets":["all","clean","install","remove","solc"],"launchTargets":[],"customConfigurationProvider":{"workspaceBrowse":{"browsePath":[],"compilerArgs":[]},"fileIndex":[]}}
