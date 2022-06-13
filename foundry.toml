@@ -1,7 +1,6 @@
 [default]
-# solc-version = "0.8.0"
 src = 'src'
 out = 'out'
 libs = ['lib']
-
+verbosity = 4
 # See more config options https://github.com/gakonst/foundry/tree/master/config
